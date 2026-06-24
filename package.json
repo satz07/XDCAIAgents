@@ -15,7 +15,9 @@
     "dev:agent": "npm run dev -w agent",
     "dev:client": "npm run dev -w client",
     "build": "npm run build -w client",
+    "build:prod": "npm run build -w client -- --mode production",
     "start": "pm2 start ecosystem.config.cjs",
+    "deploy": "npm run build:prod && pm2 restart ecosystem.config.cjs || pm2 start ecosystem.config.cjs",
     "stop": "pm2 stop ecosystem.config.cjs",
     "restart": "pm2 restart ecosystem.config.cjs",
     "logs": "pm2 logs",
@@ -24,6 +26,7 @@
   "devDependencies": {
     "concurrently": "^9.1.2",
     "dotenv": "^16.4.7",
-    "pm2": "^5.4.3"
+    "pm2": "^5.4.3",
+    "serve": "^14.2.4"
   }
 }

@@ -35,5 +35,16 @@ module.exports = {
         FX_API_URL: env.FX_API_URL || "http://127.0.0.1:4021",
       },
     },
+    {
+      name: "x402-client",
+      script: "node_modules/serve/build/main.js",
+      args: ["-s", "client/dist", "-l", env.CLIENT_PORT || "5174"],
+      cwd: root,
+      instances: 1,
+      autorestart: true,
+      watch: false,
+      max_memory_restart: "150M",
+      env: { ...env, NODE_ENV: "production" },
+    },
   ],
 };
