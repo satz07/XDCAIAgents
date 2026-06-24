@@ -1,0 +1,29 @@
+{
+  "name": "xdc-x402-fx-agent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI agent that pays for FX rate APIs via x402 (HTTP 402) with USDC on XDC Network",
+  "workspaces": [
+    "shared",
+    "server",
+    "agent",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,agent,client -c blue,green,magenta \"npm run dev -w server\" \"npm run dev -w agent\" \"npm run dev -w client\"",
+    "dev:server": "npm run dev -w server",
+    "dev:agent": "npm run dev -w agent",
+    "dev:client": "npm run dev -w client",
+    "build": "npm run build -w client",
+    "start": "pm2 start ecosystem.config.cjs",
+    "stop": "pm2 stop ecosystem.config.cjs",
+    "restart": "pm2 restart ecosystem.config.cjs",
+    "logs": "pm2 logs",
+    "status": "pm2 status"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "dotenv": "^16.4.7",
+    "pm2": "^5.4.3"
+  }
+}

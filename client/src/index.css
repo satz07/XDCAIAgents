@@ -1,0 +1,48 @@
+:root {
+  --bg: #0a0f14;
+  --surface: #121a22;
+  --surface-2: #1a2530;
+  --border: #2a3a4a;
+  --text: #e8eef4;
+  --muted: #8fa3b8;
+  --accent: #00d4aa;
+  --accent-dim: #00a884;
+  --warning: #f5a623;
+  --error: #ff6b6b;
+  --xdc: #1e4dd8;
+  --radius: 12px;
+  font-family: "DM Sans", system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 212, 170, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(30, 77, 216, 0.08), transparent),
+    var(--bg);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, textarea {
+  font-family: inherit;
+}
+
+code, .mono {
+  font-family: "JetBrains Mono", monospace;
+}
